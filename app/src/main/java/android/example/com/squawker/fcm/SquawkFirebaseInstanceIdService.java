@@ -6,9 +6,14 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 
 import androidx.annotation.NonNull;
 
+/**
+ * Listens for changes in the InstanceID
+ */
 public class SquawkFirebaseInstanceIdService extends FirebaseMessagingService {
 
     private static final String TAG = SquawkFirebaseInstanceIdService.class.getSimpleName();
+
+    // The onNewToken callback fires whenever a new token is generated.
 
     /**
      * Called if InstanceID token is updated. This may occur if the security of
@@ -17,6 +22,7 @@ public class SquawkFirebaseInstanceIdService extends FirebaseMessagingService {
      */
     @Override
     public void onNewToken(@NonNull String token) {
+        // Get updated InstanceID token.
         Log.d(TAG, "Refreshed token: " + token);
 
         // If you want to send messages to this application instance or
@@ -25,8 +31,17 @@ public class SquawkFirebaseInstanceIdService extends FirebaseMessagingService {
         sendRegistrationToServer(token);
     }
 
+    /**
+     * Persist token to third-party servers.
+     *
+     * Modify this method to associate the user's FCM InstanceID token with any server-side account
+     * maintained by your application.
+     *
+     * @param token The new token.
+     */
     private void sendRegistrationToServer(String token)
     {
-        // this method is blank and doesn't anything
+        // This method is blank, but if you were to build a server that stores users token
+        // information, this is where you'd send the token to the server.
     }
 }

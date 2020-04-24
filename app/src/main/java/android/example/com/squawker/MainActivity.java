@@ -16,7 +16,7 @@
 
 package android.example.com.squawker;
 
-import android.content.ContentValues;
+// import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.example.com.squawker.following.FollowingPreferenceActivity;
@@ -37,7 +37,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -105,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements
             Log.d(LOG_TAG, "Contains: " + extras.getString("test"));
         }
 
-        // get token
+        // Get token from the ID Service you created and show it in a log
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
                     @Override
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements
                         // Get new Instance ID token
                         String token = task.getResult().getToken();
 
-                        // Log and toast
+                        // Log
                         String msg = getString(R.string.message_token_format, token);
                         Log.d(LOG_TAG, msg);
                     }
