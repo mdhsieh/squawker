@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
-        // load dummy data
+        // load dummy datan
         /*ContentValues values = new ContentValues();
         values.put(SquawkContract.COLUMN_DATE, 1487968810557L);
         values.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.LYLA_KEY);

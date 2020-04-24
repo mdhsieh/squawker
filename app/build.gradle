@@ -39,7 +39,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.1.1'
 
     // add the Firebase SDK for Google Analytics
-    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-analytics:17.4.0'
     // add SDK specifically for FCM (Firebase Cloud Messaging)
-    implementation 'com.google.firebase:firebase-messaging:10.2.1'
+    implementation 'com.google.firebase:firebase-messaging:20.1.6'
 }
