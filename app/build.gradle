@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-// apply plugin: 'android-apt'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -37,4 +37,9 @@ dependencies {
 
     // Preferences Dependencies
     implementation 'androidx.preference:preference:1.1.1'
+
+    // add the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    // add SDK specifically for FCM (Firebase Cloud Messaging)
+    implementation 'com.google.firebase:firebase-messaging:10.2.1'
 }
