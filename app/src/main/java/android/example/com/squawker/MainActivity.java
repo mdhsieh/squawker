@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements
         // Start the loader
         getSupportLoaderManager().initLoader(LOADER_ID_MESSAGES, null, this);
 
+        /*
         // Gets the extra data from the intent that started the activity. For *notification*
         // messages, this will contain key value pairs stored in the *data* section of the message.
         Bundle extras = getIntent().getExtras();
@@ -103,6 +104,7 @@ public class MainActivity extends AppCompatActivity implements
             // If the key is there, print out the value of "test"
             Log.d(LOG_TAG, "Contains: " + extras.getString("test"));
         }
+        */
 
         // Get token from the ID Service you created and show it in a log
         FirebaseInstanceId.getInstance().getInstanceId()
