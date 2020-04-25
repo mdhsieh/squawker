@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- Service listening for any incoming messages -->
         <service
             android:name=".fcm.SquawkFirebaseInstanceIdService"
             android:exported="false">
