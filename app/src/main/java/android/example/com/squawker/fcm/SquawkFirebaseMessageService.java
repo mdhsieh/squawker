@@ -92,13 +92,8 @@ public class SquawkFirebaseMessageService extends FirebaseMessagingService {
 
         Map<String, String> data = remoteMessage.getData();
 
-        //Log.d(TAG, "data is " + data);
 
         if (data.size() > 0) {
-            /*String author = data.get("author");
-            String authorKey = data.get("authorKey");
-            String message = data.get("message");
-            String date = data.get("date");*/
 
             // create notification channel if device is Android O or above
             createNotificationChannel();
@@ -106,40 +101,6 @@ public class SquawkFirebaseMessageService extends FirebaseMessagingService {
             // Send a notification that you got a new message
             sendNotification(data);
             insertSquawk(data);
-
-            // Create an explicit intent for an Activity in your app
-            /*Intent intent = new Intent(this, MainActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-            // Android 8.0 = O and up require all notifications to be assigned to a channel or they will not appear
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.ic_person_black_48dp)
-                    .setContentTitle(author)
-                    .setContentText(message)
-                    .setPriority(NotificationCompat.PRIORITY_HIGH)
-                    // Set the intent that will fire when the user taps the notification
-                    .setContentIntent(pendingIntent)
-                    .setAutoCancel(true);
-
-            // for backwards compatibility, make sure older device notification makes sound and will appear
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN
-                    && Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                builder.setPriority(NotificationCompat.PRIORITY_HIGH);
-                builder.setDefaults(Notification.DEFAULT_SOUND);
-            }
-
-            // show the notification
-            NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-            notificationManager.notify(SQUAWKER_NOTIFICATION_ID, builder.build());*/
-
-            // use content provider to insert message into local database
-            /*ContentValues values = new ContentValues();
-            values.put(SquawkContract.COLUMN_DATE, date);
-            values.put(SquawkContract.COLUMN_AUTHOR_KEY, SquawkContract.TEST_ACCOUNT_KEY);
-            values.put(SquawkContract.COLUMN_AUTHOR, author);
-            values.put(SquawkContract.COLUMN_MESSAGE, message);
-            getContentResolver().insert(SquawkProvider.SquawkMessages.CONTENT_URI, values);*/
         }
         else
         {

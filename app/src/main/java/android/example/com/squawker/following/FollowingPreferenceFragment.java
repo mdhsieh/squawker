@@ -87,79 +87,10 @@ public class FollowingPreferenceFragment extends PreferenceFragmentCompat implem
 
                 // Subscribe
                 FirebaseMessaging.getInstance().subscribeToTopic(key);
-                // Log.d(LOG_TAG, "Subscribing to " + key);
             } else {
                 // Un-subscribe
                 FirebaseMessaging.getInstance().unsubscribeFromTopic(key);
-                // Log.d(LOG_TAG, "Un-subscribing to " + key);
             }
         }
-        /*boolean following;
-        if (key.equals(getString(R.string.follow_key_switch_asser)))
-        {
-            following = sharedPreferences.getBoolean(
-                    key, getResources().getBoolean(R.bool.follow_default_message_subscription));
-            //Log.d(LOG_TAG, "following is " + following);
-            if (following)
-            {
-                FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.ASSER_KEY);
-            }
-            else
-            {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic(SquawkContract.ASSER_KEY);
-            }
-        }
-        else if (key.equals(getString(R.string.follow_key_switch_cezanne)))
-        {
-            following = sharedPreferences.getBoolean(
-                    key, getResources().getBoolean(R.bool.follow_default_message_subscription));
-            if (following)
-            {
-                FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.CEZANNE_KEY);
-            }
-            else
-            {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic(SquawkContract.CEZANNE_KEY);
-            }
-        }
-        else if (key.equals(getString(R.string.follow_key_switch_jlin)))
-        {
-            following = sharedPreferences.getBoolean(
-                    key, getResources().getBoolean(R.bool.follow_default_message_subscription));
-            if (following)
-            {
-                FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.JLIN_KEY);
-            }
-            else
-            {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic(SquawkContract.JLIN_KEY);
-            }
-        }
-        else if (key.equals(getString(R.string.follow_key_switch_lyla)))
-        {
-            following = sharedPreferences.getBoolean(
-                    key, getResources().getBoolean(R.bool.follow_default_message_subscription));
-            if (following)
-            {
-                FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.LYLA_KEY);
-            }
-            else
-            {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic(SquawkContract.LYLA_KEY);
-            }
-        }
-        else if (key.equals(getString(R.string.follow_key_switch_nikita)))
-        {
-            following = sharedPreferences.getBoolean(
-                    key, getResources().getBoolean(R.bool.follow_default_message_subscription));
-            if (following)
-            {
-                FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.NIKITA_KEY);
-            }
-            else
-            {
-                FirebaseMessaging.getInstance().unsubscribeFromTopic(SquawkContract.NIKITA_KEY);
-            }
-        }*/
     }
 }
