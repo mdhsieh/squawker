@@ -30,9 +30,9 @@ import androidx.core.app.NotificationManagerCompat;
  * appropriately
  * depending on type of message
  */
-public class SquawkFirebaseInstanceIdService extends FirebaseMessagingService {
+public class SquawkFirebaseMessageService extends FirebaseMessagingService {
 
-    private static final String TAG = SquawkFirebaseInstanceIdService.class.getSimpleName();
+    private static final String TAG = SquawkFirebaseMessageService.class.getSimpleName();
 
     // id String of notification channel
     private static final String CHANNEL_ID = "squawker-notification-channel";
@@ -91,6 +91,8 @@ public class SquawkFirebaseInstanceIdService extends FirebaseMessagingService {
         // Check if message contains a data payload.
 
         Map<String, String> data = remoteMessage.getData();
+
+        //Log.d(TAG, "data is " + data);
 
         if (data.size() > 0) {
             /*String author = data.get("author");

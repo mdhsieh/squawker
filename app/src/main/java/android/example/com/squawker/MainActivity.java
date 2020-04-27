@@ -16,10 +16,10 @@
 
 package android.example.com.squawker;
 
-// import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.example.com.squawker.following.FollowingPreferenceActivity;
+import android.example.com.squawker.following.FollowingPreferenceFragment;
 import android.example.com.squawker.provider.SquawkContract;
 import android.example.com.squawker.provider.SquawkProvider;
 import android.os.Bundle;
@@ -42,6 +42,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
+//import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
@@ -112,6 +113,12 @@ public class MainActivity extends AppCompatActivity implements
                         Log.d(LOG_TAG, msg);
                     }
                 });
+
+        /*FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.ASSER_KEY);
+        FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.CEZANNE_KEY);
+        FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.JLIN_KEY);
+        FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.LYLA_KEY);
+        FirebaseMessaging.getInstance().subscribeToTopic(SquawkContract.NIKITA_KEY);*/
     }
 
     @Override
